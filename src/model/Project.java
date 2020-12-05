@@ -1,0 +1,49 @@
+package model;
+
+import javax.print.DocFlavor;
+import java.util.ArrayList;
+
+public class Project
+{
+  private Start_DeadLine start_deadLine;
+  private Status status;
+  private String title;
+  private ArrayList<TeamMembers> teamMembers;
+  private ArrayList<Requirement> requirements;
+  public Project(String title,ArrayList<Requirement> requirement,ArrayList<TeamMembers> teamMembers,Start_DeadLine startDeadLine,Status status)
+  {
+this.title = title;
+this.requirements = requirement;
+this.teamMembers = teamMembers;
+this.start_deadLine = startDeadLine;
+this.status = status;
+  }
+  public void addRequriement(Requirement requirement)
+  {
+    requirements.add(requirement);
+  }
+
+  public Start_DeadLine getStart_deadLine()
+  {
+    return start_deadLine;
+  }
+
+  public Status getStatus()
+  {
+    return status;
+  }
+
+  public void setStatus(Status status)
+  {
+    this.status = status;
+  }
+
+public void Edit(String title,Requirement requirement,TeamMembers teamMembers,Start_DeadLine startDeadLine,Status status)
+{
+  this.title = title;
+  this.addRequriement(requirement);
+  this.teamMembers.add(teamMembers);
+  this.start_deadLine = startDeadLine;
+  this.status = status;
+}
+}
