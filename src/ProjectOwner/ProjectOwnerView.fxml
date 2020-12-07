@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="370.0" prefWidth="331.0" userData="Project Owner" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ProjectOwner.ProjectOwnerViewController">
+   <children>
+      <HBox alignment="CENTER_LEFT" prefHeight="74.0" prefWidth="481.0">
+         <children>
+            <Label prefHeight="55.0" prefWidth="189.0" text="Finished projects">
+               <font>
+                  <Font size="23.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="5.0" />
+               </HBox.margin>
+            </Label>
+            <Button mnemonicParsing="false" onAction="#BackOnClick" prefHeight="36.0" prefWidth="77.0" text="BACK">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="70.0" right="20.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <HBox prefHeight="237.0" prefWidth="481.0">
+         <children>
+            <TableView prefHeight="200.0" prefWidth="200.0">
+              <columns>
+                <TableColumn fx:id="ProjectList" prefWidth="199.0" text="Projects" />
+              </columns>
+               <HBox.margin>
+                  <Insets left="5.0" />
+               </HBox.margin>
+            </TableView>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_RIGHT" prefHeight="64.0" prefWidth="357.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#QuitOnClick" text="QUIT">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <HBox.margin>
+                  <Insets right="20.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</VBox>
