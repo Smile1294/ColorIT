@@ -85,6 +85,14 @@ public class ProjectList {
         }
         return null;
     }
+    public Project getByTitle(String title){
+        for(Project x:projects){
+            if(x.getTitle().equals(title)){
+                return x;
+            }
+        }
+        return null;
+    }
 
 
 }

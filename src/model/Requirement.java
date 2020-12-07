@@ -27,4 +27,7 @@ public class Requirement {
     return requirementStatus;
   }
 
+  public String toString(){
+    return " " + ID + " " + why + " " + who + " " + what + " " + responsibleDeveloper + " " + date + " " + time;
+  }
 }

@@ -4,14 +4,18 @@ import java.util.ArrayList;
 
 public class ProjectListModelManager implements ProjectListModel
 {
+  private ProjectList list;
 
-  @Override public ArrayList<Requirement> getRequirementListOfProject(Project project)
-  {
-    return null;
+  public ProjectListModelManager(){
+
   }
 
-  @Override public ArrayList<Task> getTasksOfRequirement(
-      Requirement requirement) {
+  @Override public ArrayList<Requirement> getRequirementListOfProject(String title)
+  {
+    return list.getByTitle(title).getRequirements();
+  }
+
+  @Override public ArrayList<Task> getTasksOfRequirement(Requirement requirement) {
     return null;
   }
 
@@ -20,11 +24,11 @@ public class ProjectListModelManager implements ProjectListModel
   }
 
   @Override public Project getProject(String title) {
-    return null;
+    return list.getByTitle(title);
   }
 
   @Override public void addProject(Project project) {
-
+    list.Add(project);
   }
 
   @Override public void addRequirement(Requirement requirement) {

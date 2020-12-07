@@ -51,4 +51,8 @@ public class Project {
     {
          return null;
     }
+
+    public ArrayList<Requirement> getRequirements(){
+        return requirements;
+    }
 }

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public interface ProjectListModel
 {
-  ArrayList<Requirement> getRequirementListOfProject(Project project);
+  ArrayList<Requirement> getRequirementListOfProject(String title);
   ArrayList<Task> getTasksOfRequirement(Requirement requirement);
   ProjectList getProjects();
   Project getProject(String title);
