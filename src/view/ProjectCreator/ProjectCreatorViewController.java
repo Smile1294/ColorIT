@@ -7,29 +7,45 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Region;
 import model.ProjectListModel;
+import view.ProjectListViewModel;
+import view.ProjectViewModel;
+import view.ViewHandler;
+import view.ProjectListViewModel;
+import view.ProjectViewModel;
 import view.ViewHandler;
 
 public class ProjectCreatorViewController {
     public Button AssignRole;
     public Button RemoveMember;
     public Button CreateProject;
-    public TableView ProjectListTable;
-    public TableColumn ProjectListColumn;
     public TextField SearchProject;
     public Button AddMember;
     public Button EditProject;
     public Button DeleteProject;
 
+    public TableView<ProjectViewModel> ProjectList;
+    public TableColumn<ProjectViewModel, String> title;
+    public TableColumn<ProjectViewModel, String> startDate;
+    public TableColumn<ProjectViewModel, String> deadLine;
+    public TableColumn<ProjectViewModel, String> state;
 
     private Region root;
     private ViewHandler view;
-    private ProjectListModel model;
+    private ProjectListViewModel  smodel;
 
     public void init(Region root, ViewHandler view, ProjectListModel model){
         this.root = root;
         this.view = view;
-        this.model = model;
+        this.smodel = new ProjectListViewModel(model);
+
+        title.setCellValueFactory(cellData -> cellData.getValue().getProjectTitle());
+        startDate.setCellValueFactory(cellData -> cellData.getValue().getProjectStartDate());
+        deadLine.setCellValueFactory(cellData -> cellData.getValue().getProjectDeadLine());
+        state.setCellValueFactory(cellData -> cellData.getValue().getProjectState());
+
+        ProjectList.setItems(smodel.getList());
     }
+
     public Region getRoot(){
         return root;
     }

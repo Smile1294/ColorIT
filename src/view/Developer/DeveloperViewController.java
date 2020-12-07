@@ -5,7 +5,6 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.Region;
 import model.ProjectListModel;
-import model.ProjectListModelManager;
 import view.ProjectListViewModel;
 import view.ProjectViewModel;
 import view.ViewHandler;
