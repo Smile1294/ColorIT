@@ -27,6 +27,7 @@ public class RemoveMemberViewController {
     }
 
     public void BackOnClick(ActionEvent actionEvent) {
+        view.openView("ProjectCreatorView");
     }
 
     public void RemoveOnClick(ActionEvent actionEvent) {
