@@ -52,6 +52,11 @@ public class ViewHandler {
   private WelcomeViewController welcomeViewController;
 
 
+  public void closeView()
+  {
+    primaryStage.close();
+  }
+
 
 
   public ViewHandler(ProjectListModel model){
