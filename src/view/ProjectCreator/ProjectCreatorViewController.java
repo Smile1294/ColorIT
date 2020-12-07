@@ -20,32 +20,10 @@ public class ProjectCreatorViewController {
     public Button EditProject;
     public Button DeleteProject;
 
+
     private Region root;
     private ViewHandler view;
     private ProjectListModel model;
-
-    public void BackOnClick(ActionEvent actionEvent) {
-    }
-
-    public void CreateProjectOnClick(ActionEvent actionEvent) {
-    }
-
-    public void AssignRoleOnClick(ActionEvent actionEvent) {
-    }
-
-    public void RemoveMemberOnClick(ActionEvent actionEvent) {
-    }
-
-    public void AddMemberOnClick(ActionEvent actionEvent) {
-    }
-
-    public void EditProjectOnClick(ActionEvent actionEvent) {
-    }
-
-    public void DeleteProjectOnClick(ActionEvent actionEvent) {
-    }
-
-
 
     public void init(Region root, ViewHandler view, ProjectListModel model){
         this.root = root;
@@ -55,4 +33,36 @@ public class ProjectCreatorViewController {
     public Region getRoot(){
         return root;
     }
+
+
+    public void BackOnClick(ActionEvent actionEvent) {
+        view.openView("Welcome");
+    }
+
+    public void CreateProjectOnClick(ActionEvent actionEvent) {
+        view.openView("CreateProjectView");
+    }
+
+    public void AssignRoleOnClick(ActionEvent actionEvent) {
+        view.openView("AssignRoleView");
+    }
+
+    public void RemoveMemberOnClick(ActionEvent actionEvent) {
+        view.openView("RemoveMemberView");
+    }
+
+    public void AddMemberOnClick(ActionEvent actionEvent) {
+        view.openView("AddMemberView");
+    }
+
+    public void EditProjectOnClick(ActionEvent actionEvent) {
+        view.openView("");
+    }
+
+    public void DeleteProjectOnClick(ActionEvent actionEvent) {
+        view.openView("Welcome");
+    }
+
+
+
 }
