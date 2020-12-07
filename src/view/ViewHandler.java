@@ -70,20 +70,20 @@ public class ViewHandler {
         break;
       /////////////////////////////DEVELOPER/////////////////////
       case "DeveloperRequirement":
-        root = loadDeveloperRequirements("Welcome/DeveloperRequirementsView.fxml");
+        root = loadDeveloperRequirements("Developer/DeveloperRequirementsView.fxml");
         break;
       case "DeveloperTask":
-        root = loadDeveloperTasks("Welcome/DeveloperTaskTableView.fxml");
+        root = loadDeveloperTasks("Developer/DeveloperTaskTableView.fxml");
         break;
       case "DeveloperView":
         root = loadDeveloperView("Developer/DeveloperView.fxml");
         break;
       /////////////////////////PROJECT OWNER/////////////////////////
       case "ProjectOwnerRequirements":
-        root = loadProjectOwnerRequirements("Welcome/ProjectOwnerRequirementsView.fxml");
+        root = loadProjectOwnerRequirements("ProjectOwner/ProjectOwnerRequirementsView.fxml");
         break;
       case "ProjectOwnerView":
-        root = loadProjectOwnerView("Welcome/ProjectOwnerView.fxml");
+        root = loadProjectOwnerView("ProjectOwner/ProjectOwnerView.fxml");
         break;
     }
     currentScene.setRoot(root);

@@ -20,6 +20,7 @@ public class DeveloperViewController {
         return root;
     }
 
-    public void BackOnClick(ActionEvent actionEvent) {
+    public void BackOnClick() {
+        view.openView("Welcome");
     }
 }

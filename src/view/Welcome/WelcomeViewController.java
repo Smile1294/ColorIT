@@ -28,12 +28,15 @@ public class WelcomeViewController {
     }
 
     public void ProjectCreatorOnPress() {
+        view.openView("ProjectCreatorView");
     }
 
     public void ProjectOwnerOnCLick() {
+        view.openView("ProjectOwnerView");
     }
 
     public void ScrumMasterOnClick() {
+        view.openView("ScrumMasterView");
     }
 
     public void QuitOnClick() {
