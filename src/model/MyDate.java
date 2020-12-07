@@ -169,4 +169,8 @@ public class MyDate
     }
 
   }
+
+  public String getDate(){
+    return day + "." + month + "." + year;
+  }
 }
