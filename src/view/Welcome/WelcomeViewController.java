@@ -40,6 +40,5 @@ public class WelcomeViewController {
     }
 
     public void QuitOnClick() {
-        view.closeView();
     }
 }
