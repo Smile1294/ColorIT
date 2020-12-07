@@ -90,8 +90,27 @@ public class ViewHandler {
       case "ProjectOwnerView":
         root = loadProjectOwnerView("ProjectOwner/ProjectOwnerView.fxml");
         break;
+      ///////////////////////PROJECT CREATOR///////////////////////////
       case "ProjectCreatorView":
         root = loadProjectCreatorView("ProjectCreator/ProjectCreatorView.fxml");
+        break;
+      case "AddMemberView":
+        root = loadAddMemberView("ProjectCreator/AddMemberView.fxml");
+        break;
+      case "AssignRoleView":
+        root = loadAssignRoleView("ProjectCreator/AssignRoleView.fxml");
+        break;
+      case "CreateProjectView":
+        root = loadCreateProjectView("ProjectCreator/CreateProjectView.fxml");
+        break;
+      case "RemoveMemberView":
+        root = loadRemoveMemberView("ProjectCreator/RemoveMemberView.fxml");
+        break;
+      case "RequirementsView":
+        root = loadRequirementsView("ProjectCreator/RequirementsView.fxml");
+        break;
+      case "TasksView":
+        root = loadTasksView("ProjectCreator/TasksView.fxml");
         break;
     }
     currentScene.setRoot(root);
@@ -203,6 +222,8 @@ public class ViewHandler {
     }
     return projectOwnerViewController.getRoot();
   }
+
+  //////////////////////////////PROJECT CREATOR////////////////////////////////////
   public Region loadProjectCreatorView(String fxmlFile){
     if(projectCreatorViewController == null) {
       try {
@@ -217,6 +238,102 @@ public class ViewHandler {
       }
     }
     return projectCreatorViewController.getRoot();
+  }
+
+  public Region loadAddMemberView(String fxmlFile){
+    if(addMemberViewController == null) {
+      try {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource(fxmlFile));
+        root = loader.load();
+        addMemberViewController = loader.getController();
+        addMemberViewController.init(root,this, model);
+      }
+      catch (Exception e){
+        e.printStackTrace();
+      }
+    }
+    return addMemberViewController.getRoot();
+  }
+
+  public Region loadAssignRoleView(String fxmlFile){
+    if(assignRoleViewContoller == null) {
+      try {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource(fxmlFile));
+        root = loader.load();
+        assignRoleViewContoller = loader.getController();
+        assignRoleViewContoller.init(root,this, model);
+      }
+      catch (Exception e){
+        e.printStackTrace();
+      }
+    }
+    return assignRoleViewContoller.getRoot();
+  }
+
+  public Region loadRemoveMemberView(String fxmlFile){
+    if(removeMemberViewController == null) {
+      try {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource(fxmlFile));
+        root = loader.load();
+        removeMemberViewController = loader.getController();
+        removeMemberViewController.init(root,this, model);
+      }
+      catch (Exception e){
+        e.printStackTrace();
+      }
+    }
+    return removeMemberViewController.getRoot();
+  }
+
+  public Region loadRequirementsView(String fxmlFile){
+    if(requirementsViewController == null) {
+      try {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource(fxmlFile));
+        root = loader.load();
+        requirementsViewController = loader.getController();
+        requirementsViewController.init(root,this, model);
+      }
+      catch (Exception e){
+        e.printStackTrace();
+      }
+    }
+    return requirementsViewController.getRoot();
+  }
+
+  public Region loadTasksView(String fxmlFile){
+    if(tasksViewController == null) {
+      try {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource(fxmlFile));
+        root = loader.load();
+        tasksViewController = loader.getController();
+        tasksViewController.init(root,this, model);
+      }
+      catch (Exception e){
+        e.printStackTrace();
+      }
+    }
+    return createProjectViewController.getRoot();
+  }
+
+  public Region loadCreateProjectView(String fxmlFile){
+    if(createProjectViewController == null) {
+      try {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource(fxmlFile));
+        root = loader.load();
+        createProjectViewController = loader.getController();
+        createProjectViewController.init(root,this, model);
+      }
+      catch (Exception e){
+        e.printStackTrace();
+      }
+    }
+    return createProjectViewController.getRoot();
   }
 
 }
