@@ -7,7 +7,7 @@ public class Project {
     private Start_DeadLine start_deadLine;
     private Status status;
     private String title;
-    private ArrayList<TeamMembers> teamMembers;
+    private TeamMembers teamMembers;
     private ArrayList<Requirement> requirements;
 
     public Project(String title, ArrayList<Requirement> requirement, Start_DeadLine startDeadLine, Status status) {
@@ -29,7 +29,7 @@ public class Project {
     public Status getStatus() {
         return status;
     }
-    public ArrayList<TeamMembers> getTeamMembers()
+    public TeamMembers getTeamMembers()
     {
         return teamMembers;
     }

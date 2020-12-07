@@ -42,7 +42,7 @@ public class ProjectListModelManager implements ProjectListModel
   }
 
   @Override public void addDeveloper(String title,Person person) {
-    list.getByTitle(title).addTeamMember(person);
+    list.getByTitle(title);
   }
 
   @Override public Time showTimeSpentOnRequirement() {
