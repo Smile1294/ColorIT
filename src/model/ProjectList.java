@@ -18,8 +18,8 @@ public class ProjectList {
         return projects.get(index);
     }
 
-    public void size() {
-        projects.size();
+    public int getSize() {
+        return projects.size();
     }
 
     public Project GetByTitle(String title) {

@@ -8,6 +8,7 @@ public interface ProjectListModel
   ArrayList<Task> getTasksOfRequirement(Requirement requirement);
   ProjectList getProjects();
   Project getProject(String title);
+  Project getProject(int index);
   void addProject(Project project);
   void addRequirementToProject(String title,Requirement requirement);
   void addTask(Task task);
@@ -20,4 +21,7 @@ public interface ProjectListModel
   ArrayList<Project> getProjectsByDeveloper(Developer developer);
   Start_DeadLine getStartDate();
   Start_DeadLine getDeadLine();
+  int projectListSize();
+
+
 }

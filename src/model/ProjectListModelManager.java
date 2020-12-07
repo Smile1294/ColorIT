@@ -8,7 +8,7 @@ public class ProjectListModelManager implements ProjectListModel
   private TeamMembers members;
 
   public ProjectListModelManager(){
-
+    list = new ProjectList();
   }
 
   @Override public ArrayList<Requirement> getRequirementListOfProject(String title)
@@ -26,6 +26,10 @@ public class ProjectListModelManager implements ProjectListModel
 
   @Override public Project getProject(String title) {
     return list.getByTitle(title);
+  }
+
+  @Override public Project getProject(int index) {
+    return list.get(index);
   }
 
   @Override public void addProject(Project project) {
@@ -80,5 +84,9 @@ public class ProjectListModelManager implements ProjectListModel
 
   @Override public Start_DeadLine getDeadLine() {
     return null;
+  }
+
+  @Override public int projectListSize() {
+    return list.getSize();
   }
 }
