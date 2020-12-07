@@ -31,5 +31,6 @@ public class RequirementsViewController {
     }
 
     public void BackOnClick(ActionEvent actionEvent) {
+        view.openView("ProjectCreatorView");
     }
 }

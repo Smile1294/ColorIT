@@ -15,6 +15,7 @@ public class AddMemberViewController {
     }
 
     public void BackOnClick(ActionEvent actionEvent) {
+        view.openView("ProjectCreatorView");
     }
 
     private Region root;

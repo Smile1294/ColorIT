@@ -40,5 +40,6 @@ public class CreateProjectViewController {
     }
 
     public void BackOnClick(ActionEvent actionEvent) {
+        view.openView("ProjectCreatorView");
     }
 }
