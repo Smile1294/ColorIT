@@ -14,8 +14,8 @@ public class TeamMembers {
     this.owner = owner;
     developers = new ArrayList<>();
   }
-  public void addDeveloper(Developer developer){
-    developers.add(developer);
+  public void addDeveloper(Person person){
+    developers.add((Developer)person);
   }
 
   public ArrayList<Developer> getDevelopers() {

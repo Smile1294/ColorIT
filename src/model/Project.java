@@ -7,10 +7,10 @@ public class Project {
     private Start_DeadLine start_deadLine;
     private Status status;
     private String title;
-    private ArrayList<TeamMembers> teamMembers;
+    private TeamMembers teamMembers;
     private ArrayList<Requirement> requirements;
 
-    public Project(String title, ArrayList<Requirement> requirement, ArrayList<TeamMembers> teamMembers, Start_DeadLine startDeadLine, Status status) {
+    public Project(String title, ArrayList<Requirement> requirement, TeamMembers teamMembers, Start_DeadLine startDeadLine, Status status) {
         this.title = title;
         this.requirements = requirement;
         this.teamMembers = teamMembers;
@@ -29,11 +29,15 @@ public class Project {
     public Status getStatus() {
         return status;
     }
-    public ArrayList<TeamMembers> getTeamMembers()
+    public TeamMembers getTeamMembers()
     {
         return teamMembers;
     }
     public String getTitle(){return title;}
+
+    public void addTeamMember(Person person){
+        teamMembers.addDeveloper(person);
+    }
 
     public void setStatus(Status status) {
         this.status = status;
@@ -42,15 +46,10 @@ public class Project {
     public void Edit(String title, Requirement requirement, TeamMembers teamMembers, Start_DeadLine startDeadLine, Status status) {
         this.title = title;
         this.addRequriement(requirement);
-        this.teamMembers.add(teamMembers);
         this.start_deadLine = startDeadLine;
         this.status = status;
     }
 
-    public Requirement getRequirement(String title)
-    {
-         return null;
-    }
 
     public ArrayList<Requirement> getRequirements(){
         return requirements;
