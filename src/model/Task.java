@@ -1,13 +1,15 @@
 package model;
 
-public class Task {
+public class Task
+{
   private TeamMembers list;
+  private TaskStatus taskStatus;
   private Time time;
   private Start_DeadLine date;
-
   private String Title;
   private String TaskID;
   private Developer responsibleDeveloper;
+
 
   public Task(String TaskID, String Title, int timeEstimatedInHours){
     this.TaskID = TaskID;
@@ -18,6 +20,11 @@ public class Task {
     if(list.doesDeveloperExist(developer)){
       responsibleDeveloper = developer;
     }
+  }
+
+  public TaskStatus getTaskStatus()
+  {
+    return taskStatus;
   }
   public Developer getResponsibleDeveloper(){
     return responsibleDeveloper;
@@ -39,4 +46,9 @@ public class Task {
   public void setTimeSpent(double hours){
     time.setHoursSpent(hours);
   }
+
+  public void updateTaskStatus() {
+
+  }
+
 }
