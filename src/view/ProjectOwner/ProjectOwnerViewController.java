@@ -19,9 +19,13 @@ public class ProjectOwnerViewController {
         return root;
     }
 
-    public void BackOnClick() {
+    public void BackOnClick()
+    {
+        view.openView("Welcome");
     }
 
-    public void QuitOnClick() {
+    public void QuitOnClick()
+    {
+        view.closeView();
     }
 }
