@@ -10,7 +10,7 @@ public class Project {
     private ArrayList<TeamMembers> teamMembers;
     private ArrayList<Requirement> requirements;
 
-    public Project(String title, ArrayList<Requirement> requirement, ArrayList<TeamMembers> teamMembers, Start_DeadLine startDeadLine, Status status) {
+    public Project(String title, ArrayList<Requirement> requirement, Start_DeadLine startDeadLine, Status status) {
         this.title = title;
         this.requirements = requirement;
         this.teamMembers = teamMembers;
@@ -39,10 +39,9 @@ public class Project {
         this.status = status;
     }
 
-    public void Edit(String title, Requirement requirement, TeamMembers teamMembers, Start_DeadLine startDeadLine, Status status) {
+    public void Edit(String title, Requirement requirement, Start_DeadLine startDeadLine, Status status) {
         this.title = title;
         this.addRequriement(requirement);
-        this.teamMembers.add(teamMembers);
         this.start_deadLine = startDeadLine;
         this.status = status;
     }

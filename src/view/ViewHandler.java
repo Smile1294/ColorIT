@@ -329,7 +329,7 @@ public class ViewHandler {
         e.printStackTrace();
       }
     }
-    return createProjectViewController.getRoot();
+    return tasksViewController.getRoot();
   }
 
   public Region loadCreateProjectView(String fxmlFile){
