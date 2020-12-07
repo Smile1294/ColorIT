@@ -1,10 +1,11 @@
 package model;
 
 public class Requirement {
+
   private TeamMembers list;
+  private RequirementStatus requirementStatus;
   private Time time;
   private Start_DeadLine date;
-
   private String ID;
   private String why;
   private String who;
@@ -21,6 +22,9 @@ public class Requirement {
     if(list.doesDeveloperExist(developer)){
       responsibleDeveloper = developer;
     }
+  }
+  public RequirementStatus getRequirementStatus() {
+    return requirementStatus;
   }
 
 }

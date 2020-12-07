@@ -32,4 +32,11 @@ public class Person {
   public String getRole() {
     return role;
   }
+
+  // Adding toString to test!
+
+  public String toString()
+  {
+    return phoneNumber + "" + name + " " + id + "" + getRole();
+  }
 }
