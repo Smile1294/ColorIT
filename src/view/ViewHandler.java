@@ -90,6 +90,9 @@ public class ViewHandler {
       case "ProjectOwnerView":
         root = loadProjectOwnerView("ProjectOwner/ProjectOwnerView.fxml");
         break;
+      case "ProjectCreatorView":
+        root = loadProjectCreatorView("ProjectCreator/ProjectCreatorView.fxml");
+        break;
     }
     currentScene.setRoot(root);
     primaryStage.setScene(currentScene);
@@ -199,6 +202,21 @@ public class ViewHandler {
       }
     }
     return projectOwnerViewController.getRoot();
+  }
+  public Region loadProjectCreatorView(String fxmlFile){
+    if(projectCreatorViewController == null) {
+      try {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource(fxmlFile));
+        root = loader.load();
+        projectCreatorViewController = loader.getController();
+        projectCreatorViewController.init(root,this, model);
+      }
+      catch (Exception e){
+        e.printStackTrace();
+      }
+    }
+    return projectCreatorViewController.getRoot();
   }
 
 }
