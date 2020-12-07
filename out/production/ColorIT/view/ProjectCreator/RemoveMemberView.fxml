@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<VBox prefHeight="400.0" prefWidth="492.0" userData="Remove Member" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ProjectCreator.RemoveMemberViewController">
+   <children>
+      <HBox prefHeight="310.0" prefWidth="492.0">
+         <children>
+            <TableView fx:id="MemberListTable" prefHeight="326.0" prefWidth="492.0">
+              <columns>
+                <TableColumn fx:id="MemberListColumn" prefWidth="491.0" text="List Of Members" />
+              </columns>
+            </TableView>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" prefHeight="111.0" prefWidth="492.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#BackOnClick" prefHeight="39.0" prefWidth="82.0" text="BACK">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="Remove" layoutX="20.0" layoutY="41.0" mnemonicParsing="false" onAction="#RemoveOnClick" prefHeight="39.0" prefWidth="119.0" text="Remove">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="270.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </HBox>
+   </children>
+</VBox>
