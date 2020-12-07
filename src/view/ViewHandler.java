@@ -148,19 +148,19 @@ public class ViewHandler {
   }
 
   public Region loadDeveloperView(String fxmlFile){
-    if(developerTaskTableViewController == null) {
+    if(developerViewController == null) {
       try {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource(fxmlFile));
         root = loader.load();
-        developerTaskTableViewController = loader.getController();
-        developerTaskTableViewController.init(root,this, model);
+        developerViewController = loader.getController();
+        developerViewController.init(root,this, model);
       }
       catch (Exception e){
         e.printStackTrace();
       }
     }
-    return developerTaskTableViewController.getRoot();
+    return developerViewController.getRoot();
   }
 
   //////////////////////////////PROJECT OWNER////////////////////////
@@ -181,19 +181,19 @@ public class ViewHandler {
   }
 
   public Region loadProjectOwnerView(String fxmlFile){
-    if(projectOwnerRequirementsViewController == null) {
+    if(projectOwnerViewController == null) {
       try {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource(fxmlFile));
         root = loader.load();
-        projectOwnerRequirementsViewController = loader.getController();
-        projectOwnerRequirementsViewController.init(root,this, model);
+        projectOwnerViewController = loader.getController();
+        projectOwnerViewController.init(root,this, model);
       }
       catch (Exception e){
         e.printStackTrace();
       }
     }
-    return projectOwnerRequirementsViewController.getRoot();
+    return projectOwnerViewController.getRoot();
   }
 
 }
