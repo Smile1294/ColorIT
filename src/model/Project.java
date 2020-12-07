@@ -29,6 +29,11 @@ public class Project {
     public Status getStatus() {
         return status;
     }
+    public ArrayList<TeamMembers> getTeamMembers()
+    {
+        return teamMembers;
+    }
+    public String getTitle(){return title;}
 
     public void setStatus(Status status) {
         this.status = status;
