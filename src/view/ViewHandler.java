@@ -71,6 +71,8 @@ public class ViewHandler {
       case "DeveloperRequirement":
         root = loadDeveloperRequirement("Welcome/DeveloperRequirementsView.fxml");
         break;
+      case "ProjectCreatorView":
+        root = loadProjectCreator("ProjectCreator/ProjectCreatorView.fxml");
     }
     currentScene.setRoot(root);
     primaryStage.setScene(currentScene);
@@ -116,4 +118,21 @@ public class ViewHandler {
     }
     return developerRequirementsViewController.getRoot();
   }
+  ///////////////////////////////////PROJECT CREATOR//////////////////////////////
+  public Region loadProjectCreator(String fxmlFile){
+    if(projectCreatorViewController == null) {
+      try {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource(fxmlFile));
+        root = loader.load();
+        projectCreatorViewController = loader.getController();
+        projectCreatorViewController.init(root,this, model);
+      }
+      catch (Exception e){
+        e.printStackTrace();
+      }
+    }
+    return projectCreatorViewController.getRoot();
+  }
+  /////////////////////////////////////////////////////////////////////////////////
 }

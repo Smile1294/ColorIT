@@ -1,5 +1,6 @@
 package view.Welcome;
 
+import javafx.scene.control.Button;
 import javafx.scene.layout.Region;
 import model.ProjectListModel;
 import view.ViewHandler;
@@ -10,6 +11,7 @@ import java.util.Scanner;
 
 public class WelcomeViewController {
 
+    public Button Developer;
     private Region root;
     private ViewHandler view;
     private ProjectListModel model;
@@ -27,6 +29,7 @@ public class WelcomeViewController {
     }
 
     public void ProjectCreatorOnPress() {
+        view.loadProjectCreator("");
     }
 
     public void ProjectOwnerOnCLick() {
