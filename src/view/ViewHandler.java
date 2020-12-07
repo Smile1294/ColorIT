@@ -112,6 +112,16 @@ public class ViewHandler {
       case "TasksView":
         root = loadTasksView("ProjectCreator/TasksView.fxml");
         break;
+      //////////////////////////////SCRUM MASTER////////////////////////////////
+      case "ScrumMasterRequirementsView":
+        root = loadScrumMasterRequirementsView("ScrumMaster/ScrumMasterRequirementsView.fxml");
+        break;
+      case "ScrumMasterTaskTableView":
+        root = loadScrumMasterTaskTableView("ScrumMaster/ScrumMasterTaskTableView.fxml");
+        break;
+      case "ScrumMasterView":
+        root = loadScrumMasterView("ScrumMaster/ScrumMasterView.fxml");
+        break;
     }
     currentScene.setRoot(root);
     primaryStage.setScene(currentScene);
@@ -336,4 +346,52 @@ public class ViewHandler {
     return createProjectViewController.getRoot();
   }
 
+  //////////////////////////SCRUM MASTER/////////////////////////
+  public Region loadScrumMasterRequirementsView(String fxmlFile){
+    if(scrumMasterRequirementsViewController == null) {
+      try {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource(fxmlFile));
+        root = loader.load();
+        scrumMasterRequirementsViewController = loader.getController();
+        scrumMasterRequirementsViewController.init(root,this, model);
+      }
+      catch (Exception e){
+        e.printStackTrace();
+      }
+    }
+    return scrumMasterRequirementsViewController.getRoot();
+  }
+
+  public Region loadScrumMasterTaskTableView(String fxmlFile){
+    if(scrumMasterTaskTableViewController == null) {
+      try {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource(fxmlFile));
+        root = loader.load();
+        scrumMasterTaskTableViewController = loader.getController();
+        scrumMasterTaskTableViewController.init(root,this, model);
+      }
+      catch (Exception e){
+        e.printStackTrace();
+      }
+    }
+    return scrumMasterTaskTableViewController.getRoot();
+  }
+
+  public Region loadScrumMasterView(String fxmlFile){
+    if(scrumMasterViewController == null) {
+      try {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource(fxmlFile));
+        root = loader.load();
+        scrumMasterViewController = loader.getController();
+        scrumMasterViewController.init(root,this, model);
+      }
+      catch (Exception e){
+        e.printStackTrace();
+      }
+    }
+    return scrumMasterViewController.getRoot();
+  }
 }
