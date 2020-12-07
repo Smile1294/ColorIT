@@ -2,7 +2,8 @@ package model;
 
 import java.util.ArrayList;
 
-public interface ProjectListModel {
+public interface ProjectListModel
+{
   ArrayList<Requirement> getRequirementListOfProject(Project project);
   ArrayList<Task> getTasksOfRequirement(Requirement requirement);
   ProjectList getProjects();
