@@ -9,14 +9,14 @@ public interface ProjectListModel
   ProjectList getProjects();
   Project getProject(String title);
   void addProject(Project project);
-  void addRequirement(Requirement requirement);
+  void addRequirementToProject(String title,Requirement requirement);
   void addTask(Task task);
-  void addTeamMember(Person person);
+  void addDeveloper(String title,Person person);
   Time showTimeSpentOnRequirement();
   Time showTimeSpentOnTask();
   void setRoleOfTeamMember(Person person,String role);
   Developer getDeveloper(Developer developer);
-  void setProjectStatus(Status status);
+  void setProjectStatus(String title,Status status);
   ArrayList<Project> getProjectsByDeveloper(Developer developer);
   Start_DeadLine getStartDate();
   Start_DeadLine getDeadLine();

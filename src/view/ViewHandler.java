@@ -17,6 +17,7 @@ import view.ScrumMaster.ScrumMasterViewController;
 import view.Welcome.WelcomeViewController;
 
 
+
 public class ViewHandler {
 
   private Scene currentScene;
@@ -48,6 +49,7 @@ public class ViewHandler {
   private ScrumMasterViewController scrumMasterViewController;
 
 //////////////////////////MAIN VIEW VARIABLE//////////////////
+
   private WelcomeViewController welcomeViewController;
 
 

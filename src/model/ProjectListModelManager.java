@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class ProjectListModelManager implements ProjectListModel
 {
   private ProjectList list;
+  private TeamMembers members;
 
   public ProjectListModelManager(){
 
@@ -20,7 +21,7 @@ public class ProjectListModelManager implements ProjectListModel
   }
 
   @Override public ProjectList getProjects() {
-    return null;
+    return list;
   }
 
   @Override public Project getProject(String title) {
@@ -31,16 +32,17 @@ public class ProjectListModelManager implements ProjectListModel
     list.Add(project);
   }
 
-  @Override public void addRequirement(Requirement requirement) {
-
+  @Override public void addRequirementToProject(String title,
+      Requirement requirement) {
+    list.getByTitle(title).addRequriement(requirement);
   }
 
   @Override public void addTask(Task task) {
 
   }
 
-  @Override public void addTeamMember(Person person) {
-
+  @Override public void addDeveloper(String title,Person person) {
+    list.getByTitle(title).addTeamMember(person);
   }
 
   @Override public Time showTimeSpentOnRequirement() {
@@ -52,15 +54,19 @@ public class ProjectListModelManager implements ProjectListModel
   }
 
   @Override public void setRoleOfTeamMember(Person person, String role) {
-
   }
 
   @Override public Developer getDeveloper(Developer developer) {
+    for(Developer x:members.getDevelopers()){
+      if (x.equals(developer)){
+        return x;
+      }
+    }
     return null;
   }
 
-  @Override public void setProjectStatus(Status status) {
-
+  @Override public void setProjectStatus(String title,Status status) {
+    list.getByTitle(title).setStatus(status);
   }
 
   @Override public ArrayList<Project> getProjectsByDeveloper(

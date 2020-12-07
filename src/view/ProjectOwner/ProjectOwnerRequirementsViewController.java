@@ -6,7 +6,8 @@ import javafx.scene.layout.Region;
 import model.ProjectListModel;
 import view.ViewHandler;
 
-public class ProjectOwnerRequirementsViewController {
+public class ProjectOwnerRequirementsViewController
+{
     public TableView RequirementTable;
     public TableColumn RequiremetsColumn;
     public TextField Search;
@@ -16,7 +17,6 @@ public class ProjectOwnerRequirementsViewController {
     public Button DeleteRequirement;
     public Button Disapprove;
     public Button Approve;
-
     private Region root;
     private ViewHandler view;
     private ProjectListModel model;
@@ -36,7 +36,9 @@ public class ProjectOwnerRequirementsViewController {
     public void HighPriorityOnClick(ActionEvent actionEvent) {
     }
 
-    public void AddRequirementOnClick(ActionEvent actionEvent) {
+    public void AddRequirementOnClick(ActionEvent actionEvent)
+    {
+        view.openView("RequirementsView");
     }
 
     public void DeleteRequirementOnClick(ActionEvent actionEvent) {
@@ -45,9 +47,12 @@ public class ProjectOwnerRequirementsViewController {
     public void DisapproveOnClick(ActionEvent actionEvent) {
     }
 
-    public void ApproveOnClick(ActionEvent actionEvent) {
+    public void ApproveOnClick(ActionEvent actionEvent)
+    {
     }
 
-    public void BackOnClick(ActionEvent actionEvent) {
+    public void BackOnClick(ActionEvent actionEvent)
+    {
+        view.openView("ProjectOwnerView");
     }
 }
