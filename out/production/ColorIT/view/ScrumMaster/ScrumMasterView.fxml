@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="319.0" prefWidth="405.0" userData="Scrum Master" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ScrumMaster.ScrumMasterViewController">
+   <children>
+      <HBox prefHeight="254.0" prefWidth="405.0">
+         <children>
+            <HBox prefHeight="240.0" prefWidth="423.0">
+               <children>
+                  <TableView prefHeight="240.0" prefWidth="222.0">
+                    <columns>
+                      <TableColumn prefWidth="221.0" text="Project list"  fx:id="projectList"/>
+                    </columns>
+                  </TableView>
+                  <TextField fx:id="searchProject" prefHeight="0.0" prefWidth="184.0" promptText="Search Project">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+      <HBox prefHeight="61.0" prefWidth="405.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#BackOnClick" text="BACK">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="10.0" top="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</VBox>

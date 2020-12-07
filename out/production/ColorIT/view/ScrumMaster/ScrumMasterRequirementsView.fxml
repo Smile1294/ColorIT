@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="324.0" prefWidth="411.0" userData="Requiremnts" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ScrumMaster.ScrumMasterRequirementsViewController">
+   <children>
+      <HBox prefHeight="253.0" prefWidth="486.0">
+         <children>
+            <VBox prefHeight="100.0" prefWidth="242.0">
+               <children>
+                  <TableView fx:id="RequirementListTable" prefHeight="258.0" prefWidth="242.0">
+                    <columns>
+                      <TableColumn fx:id="RequirementListColumn" prefWidth="241.0" text="Requirement list" />
+                    </columns>
+                  </TableView>
+               </children>
+            </VBox>
+            <VBox prefHeight="253.0" prefWidth="162.0">
+               <children>
+                  <TextField fx:id="Search" promptText="Search Requirement">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </TextField>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox alignment="BOTTOM_RIGHT" prefHeight="73.0" prefWidth="411.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#BackOnClick" text="BACK">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="15.0" right="15.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</VBox>
