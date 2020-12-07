@@ -2,9 +2,11 @@ package model;
 
 import java.util.ArrayList;
 
-public class ProjectListModelManager implements ProjectListModel {
-  @Override public ArrayList<Requirement> getRequirementListOfProject(
-      Project project) {
+public class ProjectListModelManager implements ProjectListModel
+{
+
+  @Override public ArrayList<Requirement> getRequirementListOfProject(Project project)
+  {
     return null;
   }
 

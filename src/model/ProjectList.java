@@ -62,7 +62,29 @@ public class ProjectList {
         return null;
     }
 
+    public Project getByDates(MyDate date)
+    {
+        for (int i =0; i< projects.size(); i++)
+        {
+            if (projects.get(i).getStart_deadLine().getDeadLine() == date)
+            {
+                return projects.get(i);
+            }
+        }
+        return null;
+    }
 
+    public Project getByStatus(Status status)
+    {
+        for (int i = 0; i < projects.size(); i++)
+        {
+            if (projects.get(i).getStatus() == status)
+            {
+                return projects.get(i);
+            }
+        }
+        return null;
+    }
 
 
 }

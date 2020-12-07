@@ -51,7 +51,11 @@ public class ViewHandler {
 //////////////////////////MAIN VIEW VARIABLE//////////////////
   private WelcomeViewController welcomeViewController;
 
+  //  FOR QUIT BUTTON
 
+  public void closeView() {
+    primaryStage.close();
+  }
 
 
   public ViewHandler(ProjectListModel model){
