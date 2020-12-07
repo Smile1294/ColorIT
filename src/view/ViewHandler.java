@@ -68,23 +68,11 @@ public class ViewHandler {
       case "Welcome":
         root = loadWelcome("Welcome/WelcomeView.fxml");
         break;
-      /////////////////////////////DEVELOPER/////////////////////
       case "DeveloperRequirement":
-        root = loadDeveloperRequirements("Welcome/DeveloperRequirementsView.fxml");
+        root = loadDeveloperRequirement("Welcome/DeveloperRequirementsView.fxml");
         break;
-      case "DeveloperTask":
-        root = loadDeveloperTasks("Welcome/DeveloperTaskTableView.fxml");
-        break;
-      case "DeveloperView":
-        root = loadDeveloperView("Developer/DeveloperView.fxml");
-        break;
-      /////////////////////////PROJECT OWNER/////////////////////////
-      case "ProjectOwnerRequirements":
-        root = loadProjectOwnerRequirements("Welcome/ProjectOwnerRequirementsView.fxml");
-        break;
-      case "ProjectOwnerView":
-        root = loadProjectOwnerView("Welcome/ProjectOwnerView.fxml");
-        break;
+      case "ProjectCreatorView":
+        root = loadProjectCreator("ProjectCreator/ProjectCreatorView.fxml");
     }
     currentScene.setRoot(root);
     primaryStage.setScene(currentScene);
@@ -115,7 +103,7 @@ public class ViewHandler {
 
  //////////////////////////DEVELOPER////////////////////////////////////
 
-  public Region loadDeveloperRequirements(String fxmlFile){
+  public Region loadDeveloperRequirement(String fxmlFile){
     if(developerRequirementsViewController == null) {
       try {
         FXMLLoader loader = new FXMLLoader();
@@ -130,70 +118,21 @@ public class ViewHandler {
     }
     return developerRequirementsViewController.getRoot();
   }
-
-  public Region loadDeveloperTasks(String fxmlFile){
-    if(developerTaskTableViewController == null) {
+  ///////////////////////////////////PROJECT CREATOR//////////////////////////////
+  public Region loadProjectCreator(String fxmlFile){
+    if(projectCreatorViewController == null) {
       try {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource(fxmlFile));
         root = loader.load();
-        developerTaskTableViewController = loader.getController();
-        developerTaskTableViewController.init(root,this, model);
+        projectCreatorViewController = loader.getController();
+        projectCreatorViewController.init(root,this, model);
       }
       catch (Exception e){
         e.printStackTrace();
       }
     }
-    return developerTaskTableViewController.getRoot();
+    return projectCreatorViewController.getRoot();
   }
-
-  public Region loadDeveloperView(String fxmlFile){
-    if(developerTaskTableViewController == null) {
-      try {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource(fxmlFile));
-        root = loader.load();
-        developerTaskTableViewController = loader.getController();
-        developerTaskTableViewController.init(root,this, model);
-      }
-      catch (Exception e){
-        e.printStackTrace();
-      }
-    }
-    return developerTaskTableViewController.getRoot();
-  }
-
-  //////////////////////////////PROJECT OWNER////////////////////////
-  public Region loadProjectOwnerRequirements(String fxmlFile){
-    if(projectOwnerRequirementsViewController == null) {
-      try {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource(fxmlFile));
-        root = loader.load();
-        projectOwnerRequirementsViewController = loader.getController();
-        projectOwnerRequirementsViewController.init(root,this, model);
-      }
-      catch (Exception e){
-        e.printStackTrace();
-      }
-    }
-    return projectOwnerRequirementsViewController.getRoot();
-  }
-
-  public Region loadProjectOwnerView(String fxmlFile){
-    if(projectOwnerRequirementsViewController == null) {
-      try {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource(fxmlFile));
-        root = loader.load();
-        projectOwnerRequirementsViewController = loader.getController();
-        projectOwnerRequirementsViewController.init(root,this, model);
-      }
-      catch (Exception e){
-        e.printStackTrace();
-      }
-    }
-    return projectOwnerRequirementsViewController.getRoot();
-  }
-
+  /////////////////////////////////////////////////////////////////////////////////
 }
