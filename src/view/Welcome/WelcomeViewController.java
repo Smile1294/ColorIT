@@ -1,6 +1,5 @@
 package view.Welcome;
 
-import javafx.scene.control.Button;
 import javafx.scene.layout.Region;
 import model.ProjectListModel;
 import view.ViewHandler;
@@ -11,7 +10,6 @@ import java.util.Scanner;
 
 public class WelcomeViewController {
 
-    public Button Developer;
     private Region root;
     private ViewHandler view;
     private ProjectListModel model;
@@ -30,16 +28,17 @@ public class WelcomeViewController {
     }
 
     public void ProjectCreatorOnPress() {
-        view.loadProjectCreator("");
+        view.openView("ProjectCreatorView");
     }
 
     public void ProjectOwnerOnCLick() {
+        view.openView("ProjectOwnerView");
     }
 
     public void ScrumMasterOnClick() {
+        view.openView("ScrumMasterView");
     }
 
     public void QuitOnClick() {
-        view.closeView();
     }
 }

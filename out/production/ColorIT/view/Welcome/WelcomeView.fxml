@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.Button?>
+<?import javafx.geometry.Insets?>
 
 <VBox prefHeight="331.0" prefWidth="499.0" userData="Project" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Welcome.WelcomeViewController">
    <children>
@@ -18,7 +21,7 @@
       </HBox>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Button fx:id="Developer" mnemonicParsing="false" onAction="#DeveloperOnClick" prefHeight="51.0" prefWidth="181.0" text="Developer">
+            <Button fx:id="Developer" mnemonicParsing="false" onAction="#DeveloperOnClick" prefHeight="51.0" prefWidth="181.0" text="view.Developer">
                <font>
                   <Font size="24.0" />
                </font>
@@ -26,7 +29,7 @@
                   <Insets right="50.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="ProjectCreator" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#ProjectCreatorOnPress" prefHeight="51.0" prefWidth="193.0" text="Project Creator">
+            <Button fx:id="ProjectCreator" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#ProjectCreatorOnPress" prefHeight="51.0" prefWidth="193.0" text="view.ProjectCreator">
                <font>
                   <Font size="24.0" />
                </font>
@@ -35,7 +38,7 @@
       </HBox>
       <HBox alignment="CENTER" layoutX="10.0" layoutY="110.0" prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Button fx:id="ProjectOwner" mnemonicParsing="false" onAction="#ProjectOwnerOnCLick" prefHeight="51.0" prefWidth="189.0" text="Project Owner">
+            <Button fx:id="ProjectOwner" mnemonicParsing="false" onAction="#ProjectOwnerOnCLick" prefHeight="51.0" prefWidth="189.0" text="view.ProjectOwner">
                <font>
                   <Font size="24.0" />
                </font>
