@@ -26,6 +26,7 @@ public class WelcomeViewController {
     }
 
     public void DeveloperOnClick() {
+        view.openView("DeveloperView");
     }
 
     public void ProjectCreatorOnPress() {
