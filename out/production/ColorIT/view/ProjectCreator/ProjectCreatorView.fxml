@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<VBox prefHeight="303.0" prefWidth="569.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ProjectCreator.ProjectCreatorViewController" userData="Project Creator">
+   <children>
+      <HBox prefHeight="397.0" prefWidth="469.0">
+         <children>
+            <VBox alignment="TOP_CENTER" prefHeight="319.0" prefWidth="172.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#BackOnClick" text="BACK">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="CreateProject" mnemonicParsing="false" onAction="#CreateProjectOnClick" text="Create Project">
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="AssignRole" mnemonicParsing="false" onAction="#AssignRoleOnClick" text="Assign Role">
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="RemoveMember" layoutX="13.0" layoutY="176.0" mnemonicParsing="false" onAction="#RemoveMemberOnClick" prefHeight="37.0" prefWidth="157.0" text="Remove Member">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </VBox>
+            <VBox prefHeight="397.0" prefWidth="229.0">
+               <children>
+                  <TableView fx:id="ProjectListTable" prefHeight="397.0" prefWidth="198.0">
+                    <columns>
+                      <TableColumn fx:id="ProjectListColumn" prefWidth="227.0" text="Project list" />
+                    </columns>
+                  </TableView>
+               </children>
+            </VBox>
+             <VBox alignment="TOP_CENTER" prefHeight="397.0" prefWidth="166.0">
+                 <TextField fx:id="SearchProject" promptText="Search Project"/>
+                 <Button fx:id="AddMember" mnemonicParsing="false" onAction="#AddMemberOnClick" text="Add Member">
+                    <font>
+                        <Font size="16.0"/>
+                    </font>
+                    <VBox.margin>
+                        <Insets top="15.0"/>
+                    </VBox.margin>
+                 </Button>
+                 <Button fx:id="EditProject" mnemonicParsing="false" onAction="#EditProjectOnClick" prefHeight="37.0"
+                         prefWidth="146.0" text="Edit Project">
+                    <font>
+                        <Font size="16.0"/>
+                    </font>
+                    <VBox.margin>
+                        <Insets bottom="15.0" top="15.0"/>
+                    </VBox.margin>
+                 </Button>
+                 <Button fx:id="DeleteProject" mnemonicParsing="false" onAction="#DeleteProjectOnClick"
+                         prefHeight="37.0" prefWidth="146.0" text="Delete Project">
+                    <font>
+                        <Font size="16.0"/>
+                    </font>
+                    <VBox.margin>
+                        <Insets bottom="15.0"/>
+                    </VBox.margin>
+                 </Button>
+             </VBox>
+         </children>
+      </HBox>
+   </children>
+</VBox>
