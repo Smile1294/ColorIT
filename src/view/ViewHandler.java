@@ -17,7 +17,6 @@ import view.ScrumMaster.ScrumMasterViewController;
 import view.Welcome.WelcomeViewController;
 
 
-
 public class ViewHandler {
 
   private Scene currentScene;
@@ -122,6 +121,7 @@ public class ViewHandler {
       case "ScrumMasterView":
         root = loadScrumMasterView("ScrumMaster/ScrumMasterView.fxml");
         break;
+
     }
     currentScene.setRoot(root);
     primaryStage.setScene(currentScene);
@@ -130,6 +130,8 @@ public class ViewHandler {
     primaryStage.setHeight(root.getPrefHeight());
     primaryStage.show();
   }
+
+
 
 
   ///////////////////////////WELCOME///////////////////////////////
@@ -378,7 +380,6 @@ public class ViewHandler {
     }
     return scrumMasterTaskTableViewController.getRoot();
   }
-
   public Region loadScrumMasterView(String fxmlFile){
     if(scrumMasterViewController == null) {
       try {
@@ -394,4 +395,7 @@ public class ViewHandler {
     }
     return scrumMasterViewController.getRoot();
   }
+
+
+
 }
