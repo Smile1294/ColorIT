@@ -29,7 +29,10 @@
                <children>
                   <TableView fx:id="RequirementsTable" prefHeight="170.0" prefWidth="343.0">
                     <columns>
-                      <TableColumn fx:id="RequrimentsColumn" prefWidth="340.0" text="Requirements" />
+                        <TableColumn fx:id="Who" prefWidth="75.0" text="Who" />
+                        <TableColumn fx:id="What" prefWidth="75.0" text="What" />
+                        <TableColumn fx:id="ID" prefWidth="75.0" text="ID" />
+                        <TableColumn fx:id="When" prefWidth="75.0" text="When" />
                     </columns>
                   </TableView>
                </children>

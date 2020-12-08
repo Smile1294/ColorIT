@@ -6,9 +6,11 @@ public class ProjectListModelManager implements ProjectListModel
 {
   private ProjectList list;
   private TeamMembers members;
+  private RequirementsList requirementsList;
 
   public ProjectListModelManager(){
     list = new ProjectList();
+    requirementsList = new RequirementsList();
   }
 
   @Override public ArrayList<Requirement> getRequirementListOfProject(String title)
@@ -36,13 +38,19 @@ public class ProjectListModelManager implements ProjectListModel
     list.Add(project);
   }
 
-  @Override public void addRequirementToProject(String title,
-      Requirement requirement) {
-    list.getByTitle(title).addRequriement(requirement);
+  @Override public void addRequirement(Requirement requirement) {
+   requirementsList.addRequirement(requirement);
   }
 
   @Override public void addTask(Task task) {
 
+  }
+  @Override public int RequirementsListSize() {
+return requirementsList.getSize();
+  }
+
+  @Override public Requirement getRequirement(int index) {
+    return requirementsList.getRequirements().get(index);
   }
 
   @Override public void addDeveloper(String title,Person person) {

@@ -17,6 +17,8 @@ public class Requirement {
     this.why = why;
     this.who = who;
     this.what = what;
+    this.date = date;
+    this.time = time;
   }
   public void setResponsibleDeveloper(Developer developer){
     if(list.doesDeveloperExist(developer)){
@@ -29,5 +31,49 @@ public class Requirement {
 
   public String toString(){
     return " " + ID + " " + why + " " + who + " " + what + " " + responsibleDeveloper + " " + date + " " + time;
+  }
+
+
+  public Developer getResponsibleDeveloper()
+  {
+    return responsibleDeveloper;
+  }
+  public String getResponsibleDeveloperString()
+  {
+    return responsibleDeveloper.toString();
+  }
+
+  public String getID()
+  {
+    return ID;
+  }
+
+  public String getWho()
+  {
+    return who;
+  }
+
+  public TeamMembers getList()
+  {
+    return list;
+  }
+
+  public String getWhat()
+  {
+    return what;
+  }
+
+  public String getWhy()
+  {
+    return why;
+  }
+  public String getNeededTime()
+  {
+    return time.toString();
+  }
+
+  public String getDeadLine()
+  {
+    return date.toString();
   }
 }

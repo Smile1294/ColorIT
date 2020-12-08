@@ -22,12 +22,12 @@ public class ProjectCreatorViewController {
     public Button AddMember;
     public Button EditProject;
     public Button DeleteProject;
-
-    public TableView<ProjectViewModel> ProjectList;
+    public TableView<ProjectViewModel> ProjectListTable;
     public TableColumn<ProjectViewModel, String> title;
     public TableColumn<ProjectViewModel, String> startDate;
     public TableColumn<ProjectViewModel, String> deadLine;
     public TableColumn<ProjectViewModel, String> state;
+
 
     private Region root;
     private ViewHandler view;
@@ -43,7 +43,12 @@ public class ProjectCreatorViewController {
         deadLine.setCellValueFactory(cellData -> cellData.getValue().getProjectDeadLine());
         state.setCellValueFactory(cellData -> cellData.getValue().getProjectState());
 
-        ProjectList.setItems(smodel.getList());
+        ProjectListTable.setItems(smodel.getList());
+    }
+
+    public void reset()
+    {
+        smodel.update();
     }
 
     public Region getRoot(){

@@ -9,8 +9,9 @@ public interface ProjectListModel
   ProjectList getProjects();
   Project getProject(String title);
   Project getProject(int index);
+  Requirement getRequirement(int index);
   void addProject(Project project);
-  void addRequirementToProject(String title,Requirement requirement);
+  void addRequirement(Requirement requirement);
   void addTask(Task task);
   void addDeveloper(String title,Person person);
   Time showTimeSpentOnRequirement();
@@ -22,6 +23,8 @@ public interface ProjectListModel
   Start_DeadLine getStartDate();
   Start_DeadLine getDeadLine();
   int projectListSize();
+  int RequirementsListSize();
+
 
 
 }
