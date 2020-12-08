@@ -169,6 +169,9 @@ public class ViewHandler {
         e.printStackTrace();
       }
     }
+    else {
+      developerRequirementsViewController.reset();
+    }
     return developerRequirementsViewController.getRoot();
   }
 
@@ -185,6 +188,9 @@ public class ViewHandler {
         e.printStackTrace();
       }
     }
+    else{
+      developerTaskTableViewController.reset();
+    }
     return developerTaskTableViewController.getRoot();
   }
 
@@ -200,6 +206,9 @@ public class ViewHandler {
       catch (Exception e){
         e.printStackTrace();
       }
+    }
+    else{
+      developerViewController.reset();
     }
     return developerViewController.getRoot();
   }

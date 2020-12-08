@@ -29,11 +29,11 @@ public class Task
   public Developer getResponsibleDeveloper(){
     return responsibleDeveloper;
   }
-  public double getTimeEstimated(){
-    return time.getHoursEstimated();
+  public String getTimeEstimated(){
+    return "" + time.getHoursEstimated();
   }
-  public double getTimeSpent(){
-    return time.getHoursSpent();
+  public String getTimeSpent(){
+    return "" + time.getHoursSpent();
   }
 
   public String getTaskID() {

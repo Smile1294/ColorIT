@@ -20,10 +20,12 @@ public class DeveloperViewController {
     private Region root;
     private ViewHandler view;
     private ProjectListViewModel smodel;
+    private ProjectListModel model;
 
     public void init(Region root, ViewHandler view, ProjectListModel model){
         this.root = root;
         this.view = view;
+        this.model = model;
         this.smodel = new ProjectListViewModel(model);
 
         title.setCellValueFactory(cellData -> cellData.getValue().getProjectTitle());

@@ -9,14 +9,16 @@ import model.Task;
 public class TaskViewModel {
   private StringProperty taskID;
   private StringProperty taskTitle;
-  private DoubleProperty taskTimeSpent;
-  private DoubleProperty taskTimeEstimated;
+  private StringProperty member;
+  private StringProperty taskTimeSpent;
+  private StringProperty taskTimeEstimated;
 
   public TaskViewModel(Task task){
     taskID = new SimpleStringProperty(task.getTaskID());
     taskTitle = new SimpleStringProperty(task.getTitle());
-    taskTimeSpent = new SimpleDoubleProperty(task.getTimeSpent());
-    taskTimeEstimated = new SimpleDoubleProperty(task.getTimeEstimated());
+    taskTimeSpent = new SimpleStringProperty(task.getTimeSpent());
+    taskTimeEstimated = new SimpleStringProperty(task.getTimeEstimated());
+    taskTitle = new SimpleStringProperty(task.getResponsibleDeveloper().getName());
   }
 
   public StringProperty getTaskID() {
@@ -27,11 +29,15 @@ public class TaskViewModel {
     return taskTitle;
   }
 
-  public DoubleProperty getTaskTimeEstimated() {
+  public StringProperty getTaskTimeEstimated() {
     return taskTimeEstimated;
   }
 
-  public DoubleProperty getTaskTimeSpent() {
+  public StringProperty getTaskTimeSpent() {
     return taskTimeSpent;
+  }
+
+  public StringProperty getMember() {
+    return member;
   }
 }
