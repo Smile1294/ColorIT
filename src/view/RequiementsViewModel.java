@@ -22,9 +22,9 @@ public class RequiementsViewModel {
   public RequiementsViewModel(Requirement requirement){
 
     who = new SimpleStringProperty(requirement.getWho());
-    what = new SimpleStringProperty(requirement.getWhat());
+    why = new SimpleStringProperty(requirement.getWhy());
     ID = new SimpleStringProperty(requirement.getID());
-    neededTime = new SimpleStringProperty(requirement.getNeededTime());
+    what = new SimpleStringProperty(requirement.getWhat());
 
   }
 
@@ -36,7 +36,6 @@ public class RequiementsViewModel {
   {
     return ID;
   }
-  public StringProperty getWhen() { return  neededTime;}
   public StringProperty getWhat()
   {
     return what;

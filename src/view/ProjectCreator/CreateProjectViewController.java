@@ -22,8 +22,8 @@ public class CreateProjectViewController {
 
     @FXML private TableColumn<RequiementsViewModel,String> Who;
     @FXML private TableColumn<RequiementsViewModel,String> What;
-    @FXML private TableColumn<RequiementsViewModel,String> ID;
-    @FXML private TableColumn<RequiementsViewModel,String> When;
+    @FXML private TableColumn<RequiementsViewModel,String> IDS;
+    @FXML private TableColumn<RequiementsViewModel,String> Why;
 
     private Region root;
     private ViewHandler view;
@@ -34,9 +34,6 @@ public class CreateProjectViewController {
     {
 
     }
-
-
-
     public void init(Region root, ViewHandler view, ProjectListModel model){
         this.root = root;
         this.view = view;
@@ -44,9 +41,8 @@ public class CreateProjectViewController {
         this.model = model;
 
         Who.setCellValueFactory(cellData -> cellData.getValue().getWho());
-        What.setCellValueFactory(cellData -> cellData.getValue().getWhat());
-        ID.setCellValueFactory(cellData -> cellData.getValue().getID());
-        When.setCellValueFactory(cellData -> cellData.getValue().neededTimeProperty());
+
+
 
         RequirementsTable.setItems(smodel.getList());
     }
@@ -55,6 +51,7 @@ public class CreateProjectViewController {
 
 
     public void ShowOnClick(ActionEvent actionEvent) {
+
     }
 
     public void AddOnClick(ActionEvent actionEvent) {
