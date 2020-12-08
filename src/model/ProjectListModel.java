@@ -22,6 +22,6 @@ public interface ProjectListModel
   Start_DeadLine getStartDate();
   Start_DeadLine getDeadLine();
   int projectListSize();
-
+  Requirement getRequirement(int indexOfProject, int indexOfRequirement);
 
 }

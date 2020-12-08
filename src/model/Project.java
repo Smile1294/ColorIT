@@ -54,4 +54,9 @@ public class Project {
     public ArrayList<Requirement> getRequirements(){
         return requirements;
     }
+
+    public Requirement getRequirement(int index)
+    {
+        return requirements.get(index);
+    }
 }

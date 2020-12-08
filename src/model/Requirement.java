@@ -1,8 +1,11 @@
 package model;
 
+import java.util.ArrayList;
+
 public class Requirement {
 
   private TeamMembers list;
+  private ArrayList<Task> tasks;
   private RequirementStatus requirementStatus;
   private Time time;
   private Start_DeadLine date;
@@ -25,6 +28,16 @@ public class Requirement {
   }
   public RequirementStatus getRequirementStatus() {
     return requirementStatus;
+  }
+
+  public void addTask(Task task){
+    tasks.add(task);
+  }
+  public Task getTask(int index){
+    return tasks.get(index);
+  }
+  public int getTaskListSize(){
+    return tasks.size();
   }
 
   public String toString(){

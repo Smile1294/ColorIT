@@ -89,4 +89,9 @@ public class ProjectListModelManager implements ProjectListModel
   @Override public int projectListSize() {
     return list.getSize();
   }
+
+  @Override public Requirement getRequirement(int indexOfProject,
+      int indexOfRequirement) {
+    return list.get(indexOfProject).getRequirement(indexOfRequirement);
+  }
 }
