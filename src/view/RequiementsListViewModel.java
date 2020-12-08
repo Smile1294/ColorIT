@@ -14,12 +14,14 @@ public class RequiementsListViewModel {
     this.list = FXCollections.observableArrayList();
     update();
   }
+
   public void update()
   {
     list.clear();
     for (int i = 0; i < model.RequirementsListSize(); i++)
     {
       list.add(new RequiementsViewModel(model.getRequirement(i)));
+
     }
   }
 

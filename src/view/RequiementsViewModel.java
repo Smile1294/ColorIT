@@ -4,9 +4,11 @@ import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-
-import javafx.beans.value.ObservableValue;
 import model.Requirement;
+
+
+import javafx.collections.ObservableList;
+
 
 public class RequiementsViewModel {
   private StringProperty why;
@@ -18,25 +20,24 @@ public class RequiementsViewModel {
   private StringProperty responsibleDeveloper;
 
   public RequiementsViewModel(Requirement requirement){
-    why = new SimpleStringProperty(requirement.getWhy());
+
     who = new SimpleStringProperty(requirement.getWho());
     what = new SimpleStringProperty(requirement.getWhat());
     ID = new SimpleStringProperty(requirement.getID());
     neededTime = new SimpleStringProperty(requirement.getNeededTime());
-    DeadLine = new SimpleStringProperty(requirement.getDeadLine());
-    responsibleDeveloper = new SimpleStringProperty(requirement.getResponsibleDeveloperString());
+
   }
 
   public StringProperty getWho() {
     return who;
   }
 
-  public StringProperty IDProperty()
+  public StringProperty getID()
   {
     return ID;
   }
-
-  public StringProperty whatProperty()
+  public StringProperty getWhen() { return  neededTime;}
+  public StringProperty getWhat()
   {
     return what;
   }
@@ -52,6 +53,11 @@ public class RequiementsViewModel {
   public StringProperty responsibleDeveloperProperty()
   {
     return responsibleDeveloper;
+  }
+
+  public ObservableList<ProjectViewModel> getList()
+  {
+    return getList();
   }
 
 }

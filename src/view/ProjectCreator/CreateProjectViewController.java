@@ -2,41 +2,43 @@ package view.ProjectCreator;
 
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.Region;
 import model.*;
 import view.*;
+import view.RequiementsListViewModel;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 
 public class CreateProjectViewController {
-    public TableView<ProjectViewModel> RequirementsTable;
+    public TableView<RequiementsViewModel> RequirementsTable;
     public Button Show;
     public Button Add;
     public DatePicker DateForDeadline;
     public Button Create;
     public TextField Title;
-    public ChoiceBox PickerStatus = new ChoiceBox(FXCollections.observableArrayList(
-        "Started","Retarded","yes"
-    ));
-    public TableColumn<RequiementsViewModel,String> Who;
-    public TableColumn<RequiementsViewModel,String> What;
-    public TableColumn<RequiementsViewModel,String> ID;
-    public TableColumn<RequiementsViewModel,String> When;
+
+    @FXML private TableColumn<RequiementsViewModel,String> Who;
+    @FXML private TableColumn<RequiementsViewModel,String> What;
+    @FXML private TableColumn<RequiementsViewModel,String> ID;
+    @FXML private TableColumn<RequiementsViewModel,String> When;
 
     private Region root;
     private ViewHandler view;
-    private RequiementsViewModel smodel;
+    private ProjectListModel model;
+    private RequiementsListViewModel smodel;
 
     public void init(Region root, ViewHandler view, ProjectListModel model){
         this.root = root;
         this.view = view;
-        this.smodel = new RequiementsViewModel(model.getRequirement());
+        this.smodel = new RequiementsListViewModel(model);
+        this.model = model;
 
         Who.setCellValueFactory(cellData -> cellData.getValue().getWho());
-        What.setCellValueFactory(cellData -> cellData.getValue().whatProperty());
-        ID.setCellValueFactory(cellData -> cellData.getValue().IDProperty());
+        What.setCellValueFactory(cellData -> cellData.getValue().getWhat());
+        ID.setCellValueFactory(cellData -> cellData.getValue().getID());
         When.setCellValueFactory(cellData -> cellData.getValue().neededTimeProperty());
 
         RequirementsTable.setItems(smodel.getList());
@@ -55,10 +57,7 @@ public class CreateProjectViewController {
     }
 
     public void CreateOnClick() {
-        MyDate DeadLine = new MyDate(DateForDeadline.getValue().getDayOfMonth(),DateForDeadline.getValue()
-            .getMonthValue(),DateForDeadline.getValue().getYear());
-        MyDate StartDate = new MyDate(Calendar.DAY_OF_MONTH,Calendar.MONTH,Calendar.YEAR);
-        Start_DeadLine start_deadLine = new Start_DeadLine(StartDate,DeadLine);
+
 
     }
 
@@ -66,12 +65,14 @@ public class CreateProjectViewController {
         view.openView("ProjectCreatorView");
     }
 
+
     public void reset()
     {
         smodel.update();
     }
 
-    public Region getRoot(){
+    public Region getRoot()
+    {
         return root;
     }
 }

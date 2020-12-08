@@ -1,5 +1,8 @@
 package model;
 
+import javafx.collections.ObservableList;
+import view.ProjectViewModel;
+
 import java.util.ArrayList;
 
 public class ProjectListModelManager implements ProjectListModel
@@ -38,15 +41,23 @@ public class ProjectListModelManager implements ProjectListModel
     list.Add(project);
   }
 
+  @Override public void addRequirementToProject(String title,
+      Requirement requirement)
+  {
+    requirementsList.addRequirement(requirement);
+  }
+
   @Override public void addRequirement(Requirement requirement) {
    requirementsList.addRequirement(requirement);
   }
+
+
 
   @Override public void addTask(Task task) {
 
   }
   @Override public int RequirementsListSize() {
-return requirementsList.getSize();
+    return requirementsList.getSize();
   }
 
   @Override public Requirement getRequirement(int index) {

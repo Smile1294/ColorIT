@@ -1,5 +1,8 @@
 package model;
 
+import javafx.collections.ObservableList;
+import view.ProjectViewModel;
+
 import java.util.ArrayList;
 
 public interface ProjectListModel
@@ -12,6 +15,8 @@ public interface ProjectListModel
   void addProject(Project project);
   void addRequirementToProject(String title,Requirement requirement);
   void addTask(Task task);
+  int RequirementsListSize();
+  Requirement getRequirement(int index);
   void addDeveloper(String title,Person person);
   Time showTimeSpentOnRequirement();
   Time showTimeSpentOnTask();
@@ -23,5 +28,6 @@ public interface ProjectListModel
   Start_DeadLine getDeadLine();
   int projectListSize();
   Requirement getRequirement(int indexOfProject, int indexOfRequirement);
+  public void addRequirement(Requirement requirement);
 
 }
