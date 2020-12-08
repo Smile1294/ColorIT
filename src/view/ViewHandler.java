@@ -238,7 +238,7 @@ public class ViewHandler {
   }
 
   //////////////////////////////PROJECT CREATOR////////////////////////////////////
-  public Region loadProjectCreatorView(String fxmlFile){
+  private Region loadProjectCreatorView(String fxmlFile){
     if(projectCreatorViewController == null) {
       try {
         FXMLLoader loader = new FXMLLoader();
@@ -254,7 +254,7 @@ public class ViewHandler {
     return projectCreatorViewController.getRoot();
   }
 
-  public Region loadAddMemberView(String fxmlFile){
+  private Region loadAddMemberView(String fxmlFile){
     if(addMemberViewController == null) {
       try {
         FXMLLoader loader = new FXMLLoader();
@@ -270,7 +270,7 @@ public class ViewHandler {
     return addMemberViewController.getRoot();
   }
 
-  public Region loadAssignRoleView(String fxmlFile){
+  private Region loadAssignRoleView(String fxmlFile){
     if(assignRoleViewContoller == null) {
       try {
         FXMLLoader loader = new FXMLLoader();
@@ -286,7 +286,7 @@ public class ViewHandler {
     return assignRoleViewContoller.getRoot();
   }
 
-  public Region loadRemoveMemberView(String fxmlFile){
+  private Region loadRemoveMemberView(String fxmlFile){
     if(removeMemberViewController == null) {
       try {
         FXMLLoader loader = new FXMLLoader();
@@ -302,7 +302,7 @@ public class ViewHandler {
     return removeMemberViewController.getRoot();
   }
 
-  public Region loadRequirementsView(String fxmlFile){
+  private Region loadRequirementsView(String fxmlFile){
     if(requirementsViewController == null) {
       try {
         FXMLLoader loader = new FXMLLoader();
@@ -318,7 +318,7 @@ public class ViewHandler {
     return requirementsViewController.getRoot();
   }
 
-  public Region loadTasksView(String fxmlFile){
+  private Region loadTasksView(String fxmlFile){
     if(tasksViewController == null) {
       try {
         FXMLLoader loader = new FXMLLoader();
@@ -334,7 +334,7 @@ public class ViewHandler {
     return tasksViewController.getRoot();
   }
 
-  public Region loadCreateProjectView(String fxmlFile){
+  private Region loadCreateProjectView(String fxmlFile){
     if(createProjectViewController == null) {
       try {
         FXMLLoader loader = new FXMLLoader();

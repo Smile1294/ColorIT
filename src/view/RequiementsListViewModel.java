@@ -4,6 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import model.ProjectListModel;
 import model.Requirement;
+import java.util.ArrayList;
 
 public class RequiementsListViewModel {
   private ObservableList<RequiementsViewModel> list;

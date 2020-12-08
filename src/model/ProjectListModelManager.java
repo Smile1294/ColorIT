@@ -44,11 +44,11 @@ public class ProjectListModelManager implements ProjectListModel
   @Override public void addRequirementToProject(String title,
       Requirement requirement)
   {
-    requirementsList.addRequirement(requirement);
+    requirementsList.add(requirement);
   }
 
   @Override public void addRequirement(Requirement requirement) {
-   requirementsList.addRequirement(requirement);
+   requirementsList.add(requirement);
   }
 
 
@@ -61,7 +61,7 @@ public class ProjectListModelManager implements ProjectListModel
   }
 
   @Override public Requirement getRequirement(int index) {
-    return requirementsList.getRequirements().get(index);
+    return requirementsList.SpeicficReq(index);
   }
 
   @Override public void addDeveloper(String title,Person person) {

@@ -28,6 +28,6 @@ public interface ProjectListModel
   Start_DeadLine getDeadLine();
   int projectListSize();
   Requirement getRequirement(int indexOfProject, int indexOfRequirement);
-  public void addRequirement(Requirement requirement);
+  void addRequirement(Requirement requirement);
 
 }

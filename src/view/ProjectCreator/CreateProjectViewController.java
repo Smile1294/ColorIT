@@ -30,6 +30,13 @@ public class CreateProjectViewController {
     private ProjectListModel model;
     private RequiementsListViewModel smodel;
 
+    public CreateProjectViewController()
+    {
+
+    }
+
+
+
     public void init(Region root, ViewHandler view, ProjectListModel model){
         this.root = root;
         this.view = view;
@@ -43,8 +50,6 @@ public class CreateProjectViewController {
 
         RequirementsTable.setItems(smodel.getList());
     }
-
-
 
 
 

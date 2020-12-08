@@ -11,7 +11,7 @@ public class RequirementsList
     requirements = new ArrayList<>();
   }
 
-  public void addRequirement(Requirement requirement)
+  public void add(Requirement requirement)
   {
     requirements.add(requirement);
   }
@@ -23,5 +23,9 @@ public class RequirementsList
   public int getSize()
   {
     return requirements.size();
+  }
+  public Requirement SpeicficReq(int index)
+  {
+    return requirements.get(index);
   }
 }

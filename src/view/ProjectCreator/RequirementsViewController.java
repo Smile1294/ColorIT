@@ -26,10 +26,10 @@ public class RequirementsViewController
   public DatePicker DateForDeadline;
   public Time time;
 
-
   private Region root;
   private ViewHandler view;
   private ProjectListModel model;
+
   public RequirementsViewController()
   {
 
@@ -40,9 +40,8 @@ public class RequirementsViewController
     this.root = root;
     this.view = view;
     this.model = model;
-    reset();
+     reset();
   }
-
 
   public void reset()
   {
@@ -51,25 +50,29 @@ public class RequirementsViewController
     this.Who.setText("");
     this.Whz.setText("");
   }
+
   public Region getRoot()
   {
     return root;
   }
+
   public void DeadlineOnClck(ActionEvent actionEvent)
   {
   }
 
-
-
   @FXML private void ApplyOnClick()
   {
-      Requirement requirement = new Requirement(ID.getText(), What.getText(), Who.getText(), Whz.getText());
-      model.addRequirement(requirement);
-      view.openView("CreateProjectView");
+
+    Requirement requirement = new Requirement(ID.getText(), What.getText(),
+        Who.getText(), Whz.getText());
+    model.addRequirement(requirement);
+    reset();
+    view.openView("CreateProjectView");
   }
 
   public void BackOnClick(ActionEvent actionEvent)
   {
-    view.openView("ProjectCreatorView");
+    view.openView("CreateProjectView");
+    reset();
   }
 }
