@@ -29,9 +29,9 @@
                <children>
                   <TableView fx:id="RequirementsTable" prefHeight="170.0" prefWidth="343.0">
                     <columns>
+                        <TableColumn fx:id="IDS" prefWidth="75.0" text="ID" />
                         <TableColumn fx:id="Who" prefWidth="75.0" text="Who" />
                         <TableColumn fx:id="What" prefWidth="75.0" text="What" />
-                        <TableColumn fx:id="IDS" prefWidth="75.0" text="ID" />
                         <TableColumn fx:id="Why" prefWidth="75.0" text="When" />
                     </columns>
                   </TableView>

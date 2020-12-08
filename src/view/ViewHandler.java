@@ -251,6 +251,9 @@ public class ViewHandler {
         e.printStackTrace();
       }
     }
+    else {
+      projectCreatorViewController.reset();
+    }
     return projectCreatorViewController.getRoot();
   }
 
@@ -315,6 +318,9 @@ public class ViewHandler {
         e.printStackTrace();
       }
     }
+    else {
+      requirementsViewController.reset();
+    }
     return requirementsViewController.getRoot();
   }
 
@@ -346,6 +352,9 @@ public class ViewHandler {
       catch (Exception e){
         e.printStackTrace();
       }
+    }
+    else {
+      createProjectViewController.reset();
     }
     return createProjectViewController.getRoot();
   }

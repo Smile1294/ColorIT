@@ -41,8 +41,9 @@ public class CreateProjectViewController {
         this.model = model;
 
         Who.setCellValueFactory(cellData -> cellData.getValue().getWho());
-
-
+        What.setCellValueFactory(cellData -> cellData.getValue().getWhat());
+        Why.setCellValueFactory(cellData -> cellData.getValue().getWhy());
+        IDS.setCellValueFactory(cellData -> cellData.getValue().getID());
 
         RequirementsTable.setItems(smodel.getList());
     }

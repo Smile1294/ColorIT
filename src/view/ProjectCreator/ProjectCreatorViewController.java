@@ -1,6 +1,7 @@
 package view.ProjectCreator;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -20,18 +21,20 @@ public class ProjectCreatorViewController {
     public Button AddMember;
     public Button EditProject;
     public Button DeleteProject;
-    public TableView<ProjectViewModel> ProjectListTable;
-    public TableColumn<ProjectViewModel, String> title;
-    public TableColumn<ProjectViewModel, String> startDate;
-    public TableColumn<ProjectViewModel, String> deadLine;
-    public TableColumn<ProjectViewModel, String> state;
+    @FXML public TableView<ProjectViewModel> ProjectListTable;
+    @FXML public TableColumn<ProjectViewModel, String> title;
+    @FXML public TableColumn<ProjectViewModel, String> startDate;
+    @FXML public TableColumn<ProjectViewModel, String> deadLine;
+    @FXML public TableColumn<ProjectViewModel, String> state;
 
 
     private Region root;
     private ViewHandler view;
+    private ProjectListModel model;
     private ProjectListViewModel  smodel;
 
     public void init(Region root, ViewHandler view, ProjectListModel model){
+        this.model = model;
         this.root = root;
         this.view = view;
         this.smodel = new ProjectListViewModel(model);

@@ -62,7 +62,6 @@ public class RequirementsViewController
 
   @FXML private void ApplyOnClick()
   {
-
     Requirement requirement = new Requirement(ID.getText(), What.getText(),
         Who.getText(), Whz.getText());
     model.addRequirement(requirement);
