@@ -30,7 +30,7 @@ public class ViewHandler {
   private DeveloperTaskTableViewController developerTaskTableViewController;
   private DeveloperViewController developerViewController;
 
-//////////////////////////////////PROJECT CREATOR VARIABLES////////////////
+//////////////////////////////////PROJECT CREATOR VARIABLES///////////////////
   private AddMemberViewController addMemberViewController;
   private AssignRoleViewContoller assignRoleViewContoller;
   private CreateProjectViewController createProjectViewController;
