@@ -59,4 +59,10 @@ public class Project {
     {
         return requirements.get(index);
     }
+
+    @Override public String toString() {
+        return "Project{" + "start_deadLine=" + start_deadLine + ", status="
+            + status + ", title='" + title + '\'' + ", teamMembers="
+            + teamMembers + ", requirements=" + requirements + '}';
+    }
 }

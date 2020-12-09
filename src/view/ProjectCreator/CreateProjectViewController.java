@@ -9,16 +9,19 @@ import model.*;
 import view.*;
 import view.RequiementsListViewModel;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 
 public class CreateProjectViewController {
     public TableView<RequiementsViewModel> RequirementsTable;
     public Button Show;
     public Button Add;
-    public DatePicker DateForDeadline;
     public Button Create;
     public TextField Title;
+    public DatePicker DateForDeadline;
 
     @FXML private TableColumn<RequiementsViewModel,String> Who;
     @FXML private TableColumn<RequiementsViewModel,String> What;
@@ -45,6 +48,7 @@ public class CreateProjectViewController {
         Why.setCellValueFactory(cellData -> cellData.getValue().getWhy());
         IDS.setCellValueFactory(cellData -> cellData.getValue().getID());
 
+
         RequirementsTable.setItems(smodel.getList());
     }
 
@@ -60,7 +64,6 @@ public class CreateProjectViewController {
     }
 
     public void CreateOnClick() {
-
 
     }
 
