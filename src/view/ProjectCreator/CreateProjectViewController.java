@@ -32,6 +32,7 @@ public class CreateProjectViewController {
     private ViewHandler view;
     private ProjectListModel model;
     private RequiementsListViewModel smodel;
+    private ProjectListViewModel pmodel;
 
     public CreateProjectViewController()
     {
@@ -41,6 +42,7 @@ public class CreateProjectViewController {
         this.root = root;
         this.view = view;
         this.smodel = new RequiementsListViewModel(model);
+        this.pmodel = new ProjectListViewModel(model);
         this.model = model;
 
         Who.setCellValueFactory(cellData -> cellData.getValue().getWho());
@@ -64,7 +66,20 @@ public class CreateProjectViewController {
     }
 
     public void CreateOnClick() {
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        Date date = new Date();
+        MyDate date1 = new MyDate();
+        MyDate date2 = new MyDate();
+        String[] ll = new String[3];
+        ll = dateFormat.format(date).split("/");
+        date1.set(Integer.parseInt(ll[0]),Integer.parseInt(ll[1]),Integer.parseInt(ll[2]));
+        date2.set(DateForDeadline.getValue().getDayOfMonth(),DateForDeadline.getValue().getMonthValue(),DateForDeadline.getValue().getYear());
+        Status a = new Status();
+        ArrayList<Requirement> r = new ArrayList<>();
+        Project pt = new Project(Title.getText(),r,new Start_DeadLine(date1, date2),a);
 
+        model.addProject(pt);
+        System.out.println(model.getProject(0));
     }
 
     public void BackOnClick(ActionEvent actionEvent) {

@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox prefHeight="377.0" prefWidth="459.0" userData="Requirements" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ProjectCreator.RequirementsViewController">
+<VBox prefHeight="377.0" prefWidth="470.0" userData="Requirements" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ProjectCreator.RequirementsViewController">
    <children>
       <HBox alignment="CENTER_LEFT" prefHeight="44.0" prefWidth="459.0">
          <children>
