@@ -22,7 +22,7 @@ public class RequiementsListViewModel {
     list.clear();
     for (int x = 0; x < model.projectListSize(); x++){
       if (model.isProjectOpened(x)){
-        for (int i = 0; i < model.RequirementsListSize(); i++)
+        for (int i = 0; i < model.getProject(x).getRequirements().size(); i++)
         {
           list.add(new RequiementsViewModel(model.getProject(x).getRequirement(i)));
         }
