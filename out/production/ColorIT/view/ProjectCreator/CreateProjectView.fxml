@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox prefHeight="338.0" prefWidth="530.0" userData="CreateProject" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ProjectCreator.CreateProjectViewController">
+<VBox prefHeight="165.0" prefWidth="514.0" userData="CreateProject" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ProjectCreator.CreateProjectViewController">
    <children>
       <HBox alignment="CENTER_LEFT" prefHeight="54.0" prefWidth="559.0">
          <children>
@@ -22,44 +22,6 @@
          <VBox.margin>
             <Insets />
          </VBox.margin>
-      </HBox>
-      <HBox prefHeight="170.0" prefWidth="559.0">
-         <children>
-            <HBox prefHeight="170.0" prefWidth="341.0">
-               <children>
-                  <TableView fx:id="RequirementsTable" prefHeight="170.0" prefWidth="343.0">
-                    <columns>
-                        <TableColumn fx:id="IDS" prefWidth="75.0" text="ID" />
-                        <TableColumn fx:id="Who" prefWidth="75.0" text="Who" />
-                        <TableColumn fx:id="What" prefWidth="75.0" text="What" />
-                        <TableColumn fx:id="Why" prefWidth="75.0" text="When" />
-                    </columns>
-                  </TableView>
-               </children>
-            </HBox>
-            <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
-              <items>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
-                     <children>
-                        <Button fx:id="Add" layoutX="106.0" layoutY="10.0" mnemonicParsing="false" onAction="#AddOnClick" text="Add">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Button>
-                        <Button fx:id="Show" layoutX="1.0" layoutY="10.0" mnemonicParsing="false" onAction="#ShowOnClick" text="Show">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Button>
-                     </children>
-                  </AnchorPane>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
-                     <children>
-                        <ChoiceBox fx:id="PickerStatus" layoutX="4.0" layoutY="1.0" prefWidth="150.0" />
-                     </children></AnchorPane>
-              </items>
-            </SplitPane>
-         </children>
       </HBox>
       <HBox prefHeight="41.0" prefWidth="559.0">
          <children>
@@ -78,22 +40,22 @@
             </DatePicker>
          </children>
       </HBox>
-      <HBox alignment="CENTER_LEFT" prefHeight="63.0" prefWidth="559.0">
+      <HBox alignment="CENTER_LEFT" prefHeight="63.0" prefWidth="347.0">
          <children>
+            <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#BackOnClick" prefHeight="39.0" prefWidth="69.0" text="BACK">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Button>
             <Button fx:id="Create" mnemonicParsing="false" onAction="#CreateOnClick" text="CREATE">
                <font>
                   <Font size="18.0" />
                </font>
                <HBox.margin>
-                  <Insets left="5.0" />
-               </HBox.margin>
-            </Button>
-            <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#BackOnClick" text="BACK">
-               <font>
-                  <Font size="18.0" />
-               </font>
-               <HBox.margin>
-                  <Insets left="345.0" />
+                  <Insets left="330.0" />
                </HBox.margin>
             </Button>
          </children>

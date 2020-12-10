@@ -38,6 +38,7 @@ public class ViewHandler {
   private RemoveMemberViewController removeMemberViewController;
   private RequirementsViewController requirementsViewController;
   private TasksViewController tasksViewController;
+  private RequirementListViewControler requirementListViewControler;
 
 ////////////////////////PROJECT OWNER VARIABLES//////////////////
   private ProjectOwnerRequirementsViewController projectOwnerRequirementsViewController;
@@ -123,7 +124,9 @@ public class ViewHandler {
       case "ScrumMasterView":
         root = loadScrumMasterView("ScrumMaster/ScrumMasterView.fxml");
         break;
-
+      case "RequirementListView":
+        root = loadRequirementListView("ProjectCreator/RequirementListView.fxml");
+        break;
     }
     currentScene.setRoot(root);
     primaryStage.setScene(currentScene);
@@ -331,6 +334,26 @@ public class ViewHandler {
       requirementsViewController.reset();
     }
     return requirementsViewController.getRoot();
+  }
+
+
+  private Region loadRequirementListView(String fxmlFile){
+    if(requirementListViewControler == null) {
+      try {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource(fxmlFile));
+        root = loader.load();
+        requirementListViewControler = loader.getController();
+        requirementListViewControler.init(root,this, model);
+      }
+      catch (Exception e){
+        e.printStackTrace();
+      }
+    }
+    else {
+      requirementListViewControler.reset();
+    }
+    return requirementListViewControler.getRoot();
   }
 
   private Region loadTasksView(String fxmlFile){

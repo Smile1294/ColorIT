@@ -29,5 +29,6 @@ public interface ProjectListModel
   int projectListSize();
   Requirement getRequirement(int indexOfProject, int indexOfRequirement);
   void addRequirement(Requirement requirement);
-
+  boolean isProjectOpened(int index);
+  void setProjectOpened(int index, boolean isOpened);
 }

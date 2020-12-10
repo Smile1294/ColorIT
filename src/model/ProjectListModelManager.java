@@ -51,7 +51,13 @@ public class ProjectListModelManager implements ProjectListModel
    requirementsList.add(requirement);
   }
 
+  @Override public boolean isProjectOpened(int index) {
+    return list.get(index).isOpened();
+  }
 
+  @Override public void setProjectOpened(int index, boolean isOpened) {
+    list.get(index).setOpened(isOpened);
+  }
 
   @Override public void addTask(Task task) {
 

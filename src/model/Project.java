@@ -8,14 +8,16 @@ public class Project {
     private Status status;
     private String title;
     private TeamMembers teamMembers;
+    private boolean isOpened;
     private ArrayList<Requirement> requirements;
 
-    public Project(String title, ArrayList<Requirement> requirement, Start_DeadLine startDeadLine, Status status) {
+    public Project(String title, Start_DeadLine startDeadLine) {
         this.title = title;
-        this.requirements = requirement;
+        this.requirements = new ArrayList<>();
         this.teamMembers = teamMembers;
         this.start_deadLine = startDeadLine;
-        this.status = status;
+        //this.status = status;
+        this.isOpened = false;
     }
 
     public void addRequriement(Requirement requirement) {
@@ -60,7 +62,15 @@ public class Project {
         return requirements.get(index);
     }
 
-   public String toString() {
+    public boolean isOpened() {
+        return isOpened;
+    }
+
+    public void setOpened(boolean opened) {
+        isOpened = opened;
+    }
+
+    public String toString() {
         return " "+title+" " + start_deadLine + " " + status +  " " + teamMembers + " " + requirements;
     }
 }

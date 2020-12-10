@@ -2,6 +2,7 @@ package view;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import model.ProjectListModel;
 import model.Requirement;
 import java.util.ArrayList;
@@ -19,10 +20,13 @@ public class RequiementsListViewModel {
   public void update()
   {
     list.clear();
-    for (int i = 0; i < model.RequirementsListSize(); i++)
-    {
-      list.add(new RequiementsViewModel(model.getRequirement(i)));
-
+    for (int x = 0; x < model.projectListSize(); x++){
+      if (model.isProjectOpened(x)){
+        for (int i = 0; i < model.RequirementsListSize(); i++)
+        {
+          list.add(new RequiementsViewModel(model.getProject(x).getRequirement(i)));
+        }
+      }
     }
   }
 
@@ -33,7 +37,11 @@ public class RequiementsListViewModel {
 
 
   public void add(Requirement requirement)
-  {
-    list.add(new RequiementsViewModel(requirement));
+  {for (int x = 0; x < model.projectListSize(); x++){
+    if (model.isProjectOpened(x)){
+      list.add(new RequiementsViewModel(model.getProject(x).getRequirement(model.getProject(x).getRequirements().size()-1)));
+    }
+    }
   }
+
 }

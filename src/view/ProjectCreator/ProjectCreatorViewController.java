@@ -7,6 +7,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Region;
+import model.Project;
 import model.ProjectListModel;
 import view.ProjectListViewModel;
 import view.ProjectViewModel;
@@ -43,7 +44,7 @@ public class ProjectCreatorViewController {
         title.setCellValueFactory(cellData -> cellData.getValue().getProjectTitle());
         startDate.setCellValueFactory(cellData -> cellData.getValue().getProjectStartDate());
         deadLine.setCellValueFactory(cellData -> cellData.getValue().getProjectDeadLine());
-        state.setCellValueFactory(cellData -> cellData.getValue().getProjectState());
+        //state.setCellValueFactory(cellData -> cellData.getValue().getProjectState());
 
         ProjectList.setItems(smodel.getList());
     }
@@ -66,9 +67,6 @@ public class ProjectCreatorViewController {
         view.openView("CreateProjectView");
     }
 
-    public void AssignRoleOnClick(ActionEvent actionEvent) {
-        view.openView("AssignRoleView");
-    }
 
     public void RemoveMemberOnClick(ActionEvent actionEvent) {
         view.openView("RemoveMemberView");
@@ -86,6 +84,17 @@ public class ProjectCreatorViewController {
         view.openView("Welcome");
     }
 
-
-
+    public void ShowRequirementsClick(ActionEvent actionEvent) {
+        ProjectViewModel selectedProject = ProjectList.getSelectionModel().getSelectedItem();
+        Project wry = new Project(selectedProject.getProjectTitle().get(),null);
+        if(selectedProject != null){
+            for (int x = 0; x < model.getProjects().getSize(); x++){
+                if (model.getProject(x).getTitle()
+                    .equals(selectedProject.getProjectTitle().get())){
+                    model.getProject(x).setOpened(true);
+                }
+            }
+            view.openView("RequirementListView");
+        }
+    }
 }

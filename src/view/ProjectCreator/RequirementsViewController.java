@@ -62,16 +62,20 @@ public class RequirementsViewController
 
   @FXML private void ApplyOnClick()
   {
-    Requirement requirement = new Requirement(ID.getText(), What.getText(),
-        Who.getText(), Whz.getText());
-    model.addRequirement(requirement);
+    for(int x = 0; x < model.projectListSize(); x++){
+      if (model.getProject(x).isOpened()){
+        Requirement requirement = new Requirement(ID.getText(), What.getText(),Who.getText(), Whz.getText());
+        model.getProject(x).addRequriement(requirement);
+      }
+    }
+
     reset();
-    view.openView("CreateProjectView");
+    view.openView("RequirementListView");
   }
 
   public void BackOnClick(ActionEvent actionEvent)
   {
-    view.openView("CreateProjectView");
+    view.openView("RequirementListView");
     reset();
   }
 }

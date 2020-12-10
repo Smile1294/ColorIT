@@ -16,17 +16,10 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class CreateProjectViewController {
-    public TableView<RequiementsViewModel> RequirementsTable;
-    public Button Show;
-    public Button Add;
     public Button Create;
     public TextField Title;
     public DatePicker DateForDeadline;
 
-    @FXML private TableColumn<RequiementsViewModel,String> Who;
-    @FXML private TableColumn<RequiementsViewModel,String> What;
-    @FXML private TableColumn<RequiementsViewModel,String> IDS;
-    @FXML private TableColumn<RequiementsViewModel,String> Why;
 
     private Region root;
     private ViewHandler view;
@@ -45,25 +38,11 @@ public class CreateProjectViewController {
         this.pmodel = new ProjectListViewModel(model);
         this.model = model;
 
-        Who.setCellValueFactory(cellData -> cellData.getValue().getWho());
-        What.setCellValueFactory(cellData -> cellData.getValue().getWhat());
-        Why.setCellValueFactory(cellData -> cellData.getValue().getWhy());
-        IDS.setCellValueFactory(cellData -> cellData.getValue().getID());
-
-
-        RequirementsTable.setItems(smodel.getList());
     }
 
 
 
 
-    public void ShowOnClick(ActionEvent actionEvent) {
-
-    }
-
-    public void AddOnClick(ActionEvent actionEvent) {
-        view.openView("RequirementsView");
-    }
 
     public void CreateOnClick() {
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
@@ -76,10 +55,12 @@ public class CreateProjectViewController {
         date2.set(DateForDeadline.getValue().getDayOfMonth(),DateForDeadline.getValue().getMonthValue(),DateForDeadline.getValue().getYear());
         Status a = new Status();
         ArrayList<Requirement> r = new ArrayList<>();
-        Project pt = new Project(Title.getText(),r,new Start_DeadLine(date1, date2),a);
+        Project pt = new Project(Title.getText(),new Start_DeadLine(date1, date2));
+
 
         model.addProject(pt);
-        System.out.println(model.getProject(0));
+        Title.setText("");
+        view.openView("ProjectCreatorView");
     }
 
     public void BackOnClick(ActionEvent actionEvent) {
