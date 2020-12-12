@@ -34,7 +34,6 @@ public class CreateProjectViewController {
     public void init(Region root, ViewHandler view, ProjectListModel model){
         this.root = root;
         this.view = view;
-        this.smodel = new RequiementsListViewModel(model);
         this.pmodel = new ProjectListViewModel(model);
         this.model = model;
 
@@ -70,7 +69,7 @@ public class CreateProjectViewController {
 
     public void reset()
     {
-        smodel.update();
+        pmodel.update();
     }
 
     public Region getRoot()

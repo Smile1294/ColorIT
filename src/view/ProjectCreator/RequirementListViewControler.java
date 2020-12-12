@@ -54,6 +54,7 @@ public class RequirementListViewControler {
   }
 
   public void ShowOnClick(ActionEvent actionEvent) {
+
   }
 
   public void BackOnClick(ActionEvent actionEvent) {
@@ -71,7 +72,6 @@ public class RequirementListViewControler {
     if (model.getProject(model.getProjects().getSize()-1).getRequirements().size() != 0)
     smodel.add(model.getProject(model.getProjects().getSize()-1).getRequirement(0));
 
-    System.out.println(smodel.getList().get(0).getID());
     smodel.update();
   }
 

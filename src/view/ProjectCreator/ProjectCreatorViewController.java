@@ -86,7 +86,6 @@ public class ProjectCreatorViewController {
 
     public void ShowRequirementsClick(ActionEvent actionEvent) {
         ProjectViewModel selectedProject = ProjectList.getSelectionModel().getSelectedItem();
-        Project wry = new Project(selectedProject.getProjectTitle().get(),null);
         if(selectedProject != null){
             for (int x = 0; x < model.getProjects().getSize(); x++){
                 if (model.getProject(x).getTitle()
